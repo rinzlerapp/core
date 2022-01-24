@@ -1,0 +1,38 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <style>
+    #main-wrapper {
+      display: grid;
+      grid-template-columns: 300px 1fr 300px;
+      padding-bottom: 80px;
+      height: 100%;
+      gap: 20px;
+    }
+  </style>
+
+  <route default>
+    <main id="main-wrapper">
+      <application name="@rinzler/sidebar"></application>
+      <application name="@rinzler/main" id="main"></application>
+      <application name="@rinzler/friends-activity"></application>
+    </main>
+    <application name="@rinzler/player"></application>
+  </route>
+</single-spa-router>
